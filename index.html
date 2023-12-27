@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Client Schedule</title>
+    <style>
+      td {
+        border: 1px solid #dee2e6;
+        text-align: center;
+        padding: 0 !important; /* Remove default padding */
+        white-space: nowrap; /* Prevent line breaks */
+        overflow: auto; /* Add scrollbars if necessary */
+      }
+      .inner_cell {
+        display: inline-block;
+        /* border: 1px solid black; */
+        box-sizing: border-box; /* Include borders in width calculation */
+        vertical-align: top; /* Align cells to the top */
+        margin: 0;
+        width: 100%;
+        padding: 5px !important;
+        overflow: hidden; /* Prevents cells from going outside the parent cell */
+      }
+
+      .inner_cell:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mt-4">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">Client Code</th>
+            <th scope="col">Client Name</th>
+            <th scope="col" colspan="31">Month</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <!-- Repeat for the rest of the days -->
+            <th>Sat</th>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+            <th>Mon</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>10</th>
+            <th>11</th>
+            <th>12</th>
+            <th>13</th>
+            <th>14</th>
+            <th>15</th>
+            <th>16</th>
+            <th>17</th>
+            <th>18</th>
+            <th>19</th>
+            <th>20</th>
+            <th>21</th>
+            <th>22</th>
+            <th>23</th>
+            <th>24</th>
+            <th>25</th>
+            <th>26</th>
+            <th>27</th>
+            <th>28</th>
+            <th>29</th>
+            <th>30</th>
+            <th>31</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Client Code 1</td>
+            <td>Client Name 1</td>
+            <!-- Repeat for the rest of the days -->
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+            <td><div class="inner_cell">_</div></td>
+          </tr>
+          <!--  -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      let dayCells = document.querySelectorAll(".inner_cell");
+      let symbolObject = {
+        X: "target",
+        O: "onrandom",
+        F: "failed",
+        P: "planned",
+        N: "new",
+        _: "_",
+      };
+
+      let currentSymbol = "_"; // Initial symbol
+      // TODO : you should pass the Current Symbol For Each Cell Alone  ;
+      dayCells.forEach((eachCell) => {
+        eachCell.addEventListener("click", function () {
+          // Toggle through symbols
+          switch (currentSymbol) {
+            case "_":
+              currentSymbol = "X"; // Clear the cell
+              eachCell.style.backgroundColor = "white";
+              break;
+            case "X":
+              currentSymbol = "O"; // Clear the cell
+              eachCell.style.backgroundColor = "Orange";
+              break;
+            case "O":
+              currentSymbol = "F"; // Change to "F" on the next click
+              eachCell.style.backgroundColor = "red";
+              break;
+            case "F":
+              currentSymbol = "P"; // Change to "P" on the next click
+              eachCell.style.backgroundColor = "green";
+              break;
+            case "P":
+              currentSymbol = "N"; // Change to "N" on the next click
+              eachCell.style.backgroundColor = "blue";
+              break;
+            case "N":
+              currentSymbol = "_"; // Change to "" (clear) on the next click
+              eachCell.style.backgroundColor = "white";
+              break;
+            default:
+              break;
+          }
+          // Set the inner HTML of the cell
+          if (currentSymbol) {
+            eachCell.innerText = currentSymbol;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
