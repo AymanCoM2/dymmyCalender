@@ -2,10 +2,47 @@
 <html lang="en" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/bootstrapv4.5.2 .min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <title>Client Schedule</title>
+    <style>
+      td {
+        border: 1px solid #dee2e6;
+        text-align: center;
+        padding: 0 !important; /* Remove default padding */
+        white-space: nowrap; /* Prevent line breaks */
+        overflow: auto; /* Add scrollbars if necessary */
+      }
+      .inner_cell {
+        display: inline-block;
+        /* border: 1px solid black; */
+        box-sizing: border-box; /* Include borders in width calculation */
+        vertical-align: top; /* Align cells to the top */
+        margin: 0;
+        width: 100%;
+        padding: 5px !important;
+        overflow: hidden; /* Prevents cells from going outside the parent cell */
+
+        /* To Disable Selecting Letter We Use the Below Lines  */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        /* To Disable Selecting Letter We Use the Below Lines  */
+      }
+
+      .inner_cell:hover {
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
     <div class="m-4">
@@ -53,12 +90,14 @@
             <td><div class="inner_cell" data-current-symbo="_">_</div></td>
             <td><div class="inner_cell" data-current-symbo="_">_</div></td>
           </tr>
+          <!--  -->
         </tbody>
       </table>
     </div>
 
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
-    <script src="js/bootstrapv4.5.2 .min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       let dayCells = document.querySelectorAll(".inner_cell");
       // let symbolObject = {
@@ -70,6 +109,7 @@
       //   _: "_",
       // };
 
+      // TODO : you should pass the Current Symbol For Each Cell Alone  ;
       dayCells.forEach((eachCell) => {
         let currentSymbol = eachCell.dataset.currentSymbo;
         eachCell.addEventListener("click", function () {
